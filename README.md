@@ -1,2 +1,2 @@
 # YOLO-ObjectDetectionAPP
-Android app detection using YOLOV4 and YOLOV5 tflite models
+Android app - Object Detection using YOLOV4 and YOLOV5 .tflite models
