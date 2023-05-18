@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="416dp"
+        android:layout_height="416dp"
+        android:scaleType="fitStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/kite" />
+
+    <org.tensorflow.lite.examples.detection.customview.OverlayView
+        android:id="@+id/tracking_overlay"
+        android:layout_width="416dp"
+        android:layout_height="416dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/yolov4_tiny"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yolov4-Tiny"
+        android:textColor="@android:color/white"
+        android:background="@color/tfe_color_primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cameraButton"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Button
+        android:id="@+id/yolov5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yolov5"
+        android:textColor="@android:color/white"
+        android:background="@color/tfe_color_primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintVertical_bias="0.5" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"
+        app:layout_constraintStart_toEndOf="@+id/yolov4_tiny"
+        app:layout_constraintEnd_toStartOf="@+id/yolov5"
+        app:layout_constraintHorizontal_chainStyle="packed" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
